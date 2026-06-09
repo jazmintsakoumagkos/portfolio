@@ -32,7 +32,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Scanline overlay */
+
 body::before {
   content: '';
   position: fixed;
@@ -91,7 +91,7 @@ body::before {
   opacity: 0.4;
 }
 
-/* Buttons */
+
 .btn-primary {
   font-family: 'Space Mono', monospace;
   font-size: 0.78rem;
@@ -134,7 +134,7 @@ body::before {
   box-shadow: 4px 4px 0 var(--purple);
 }
 
-/* Fade-up animation */
+
 .fade-up {
   opacity: 0;
   transform: translateY(24px);
@@ -145,7 +145,7 @@ body::before {
   transform: none;
 }
 
-/* Float keyframe for hero shapes */
+
 @keyframes float {
   0%, 100% { transform: translateY(0px) scale(1); }
   50% { transform: translateY(-30px) scale(1.05); }
