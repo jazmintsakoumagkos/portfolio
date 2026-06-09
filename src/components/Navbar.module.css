@@ -1,0 +1,54 @@
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  padding: 1.2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 45, 120, 0.15);
+}
+
+.logo {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--pink);
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+
+.links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.links a {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1px;
+  background: var(--cyan);
+  transition: width 0.3s ease;
+}
+
+.links a:hover { color: var(--cyan); }
+.links a:hover::after { width: 100%; }
+
+@media (max-width: 640px) {
+  .nav { padding: 1rem 1.5rem; }
+  .links { gap: 1.2rem; }
+}

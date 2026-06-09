@@ -1,0 +1,100 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+.card {
+  background: var(--dark3);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 2px;
+}
+
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-3px);
+}
+
+
+.pink::before   { background: var(--pink);   }
+.cyan::before   { background: var(--cyan);   }
+.yellow::before { background: var(--yellow); }
+.purple::before { background: var(--purple); }
+.green::before  { background: var(--green);  }
+.orange::before { background: var(--orange); }
+.red::before    { background: var(--red);    }
+
+.icon {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.cardTitle {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.cardSub {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+
+.langSection { margin-top: 3rem; }
+
+.langLabel {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.langGrid {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.langItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.langName {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--text);
+  text-transform: uppercase;
+}
+
+.langLevel {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.langBar {
+  width: 160px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.langBarFill { height: 100%; }

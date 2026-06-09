@@ -1,0 +1,183 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 3rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background blobs */
+.heroBg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heroBg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,45,120,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,45,120,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.12;
+  animation: float 8s ease-in-out infinite;
+}
+
+.shape1 { width: 500px; height: 500px; background: var(--pink);   top: -100px; right: -100px; animation-delay: 0s; }
+.shape2 { width: 350px; height: 350px; background: var(--purple); bottom: -50px; left: -50px; animation-delay: 2s; }
+.shape3 { width: 200px; height: 200px; background: var(--cyan);   top: 40%; left: 30%; animation-delay: 4s; }
+.shape4 { width: 150px; height: 150px; background: var(--yellow); bottom: 20%; right: 20%; animation-delay: 1s; }
+.shape5 { width: 180px; height: 180px; background: var(--green);  top: 60%; left: 10%; animation-delay: 3s; }
+.shape6 { width: 130px; height: 130px; background: var(--orange); top: 20%; left: 50%; animation-delay: 5s; }
+.shape7 { width: 100px; height: 100px; background: var(--red);    bottom: 40%; right: 5%; animation-delay: 2.5s; }
+
+/* Corner brackets */
+.cornerTL,
+.cornerBR {
+  position: absolute;
+  width: 40px; height: 40px;
+  pointer-events: none;
+}
+.cornerTL { top: 5rem; left: 1.5rem; border-top: 2px solid var(--pink); border-left: 2px solid var(--pink); }
+.cornerBR { bottom: 2rem; right: 1.5rem; border-bottom: 2px solid var(--cyan); border-right: 2px solid var(--cyan); }
+
+/* Tag */
+.heroTag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--cyan);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.heroTag::before {
+  content: '';
+  display: block;
+  width: 40px; height: 1px;
+  background: var(--cyan);
+}
+
+/* Two-column layout */
+.heroLayout {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.heroLeft { flex-shrink: 0; }
+
+.heroRight {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* Welcome words */
+.heroWelcome {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.welcomeLine {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  display: block;
+  padding-left: 0.5rem;
+  border-left: 3px solid currentColor;
+  transition: transform 0.2s;
+}
+.welcomeLine:hover { transform: translateX(0.7rem); }
+
+/* Role row */
+.heroRoleRow { margin-bottom: 1.8rem; }
+
+.heroRole {
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  color: var(--purple);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.heroRole::after {
+  content: '';
+  flex: 1;
+  max-width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--purple), transparent);
+}
+
+.heroName {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.pink { color: var(--pink); }
+
+.heroBio {
+  max-width: 560px;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #bbb;
+  margin-bottom: 3rem;
+}
+
+.heroCta {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+/* Scroll hint */
+.scrollHint {
+  position: absolute;
+  bottom: 2.5rem; left: 3rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.scrollHint::after {
+  content: '';
+  width: 1px; height: 60px;
+  background: linear-gradient(to bottom, var(--muted), transparent);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@media (max-width: 640px) {
+  .hero { padding: 7rem 1.5rem 3rem; }
+}

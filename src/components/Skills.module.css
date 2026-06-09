@@ -1,0 +1,57 @@
+.block {
+  margin-bottom: 2.5rem;
+}
+
+.blockLabel {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.pill {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid;
+  letter-spacing: 0.05em;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.pill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.pill:hover::before { opacity: 0.08; }
+.pill:hover { transform: translateY(-2px); }
+
+/* Color variants */
+.pink   { border-color: var(--pink);   color: var(--pink);   }
+.pink::before   { background: var(--pink); }
+.cyan   { border-color: var(--cyan);   color: var(--cyan);   }
+.cyan::before   { background: var(--cyan); }
+.yellow { border-color: var(--yellow); color: var(--yellow); }
+.yellow::before { background: var(--yellow); }
+.purple { border-color: var(--purple); color: var(--purple); }
+.purple::before { background: var(--purple); }
+.green  { border-color: var(--green);  color: var(--green);  }
+.green::before  { background: var(--green); }
+.orange { border-color: var(--orange); color: var(--orange); }
+.orange::before { background: var(--orange); }
+.red    { border-color: var(--red);    color: var(--red);    }
+.red::before    { background: var(--red); }

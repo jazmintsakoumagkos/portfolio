@@ -1,0 +1,38 @@
+.placeholder {
+  border: 1px dashed rgba(255, 45, 120, 0.3);
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.placeholder::after {
+  content: 'COMING SOON';
+  position: absolute;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 6rem;
+  opacity: 0.03;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  color: var(--pink);
+  letter-spacing: 0.2em;
+  pointer-events: none;
+}
+
+.placeholder h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.placeholder p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  max-width: 400px;
+  margin: 0 auto 1.5rem;
+}
